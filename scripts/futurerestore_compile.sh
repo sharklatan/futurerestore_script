@@ -16,10 +16,10 @@ cd libusbmuxd ; ./autogen.sh ; make ; sudo make install ; cd ..
 cd libimobiledevice ; ./autogen.sh ; make ; sudo make install ; cd ..
 git clone https://github.com/lzfse/lzfse
 git clone https://github.com/libimobiledevice/libirecovery
-git clone https://github.com/Merculous/libgeneral
-git clone https://github.com/Merculous/libfragmentzip
-git clone https://github.com/tihmstar/img4tool
-git clone --recursive https://github.com/Merculous/futurerestore
+git clone https://github.com/LukeZGD/libgeneral
+git clone https://github.com/LukeZGD/libfragmentzip
+git clone https://github.com/LukeZGD/img4tool
+git clone --recursive https://github.com/marijuanARM/futurerestore
 cd lzfse ; make ; sudo make install ; cd ..
 cd libirecovery ; ./autogen.sh ; make ; sudo make install ; cd ..
 cd libgeneral ; ./autogen.sh ; make ; sudo make install ; cd ..
