@@ -28,7 +28,7 @@ cd img4tool ; ./autogen.sh ; make ; sudo make install ; cd ..
 cd futurerestore ; ./autogen.sh ; make ; sudo make install ; cd ..
 #
 #Add config shared libraries: libimobiledevice-1.0.so.6
-ldconfig
+sudo ldconfig
 
 echo
 echo "Done"
