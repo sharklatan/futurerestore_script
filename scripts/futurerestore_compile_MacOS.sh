@@ -1,9 +1,15 @@
 #!/bin/sh
-# macOS 10.15
+# Tested
+# MacOs 10.15.2
+# MacOS 10.15
+# MacOS 10.14.6
+
 
 mkdir build
 cd build
 
+# Begining of library cleaning
+# This part is important to avoid problems in future versions of Futurerestore
 sudo rm -f /usr/local/lib/libfragmentzip.*
 sudo rm -f /usr/local/lib/libideviceactivation.*
 sudo rm -f /usr/local/lib/libimobiledevice.*
@@ -47,7 +53,9 @@ sudo rm -f /usr/local/lib/libjssy.a
 sudo rm -f /usr/local/lib/libplist++.a
 sudo rm -f /usr/local/lib/libplist.a
 sudo rm -f /usr/local/lib/libusbmuxd.a
+# Ending of library cleaning
 
+#You need to get brew install from the website https://brew.sh
 brew install make cmake automake autoconf libtool pkg-config curl openssl readline libplist libzip libimobiledevice libirecovery
 
 
@@ -60,52 +68,62 @@ export LIBRARY_PATH=/usr/local/opt/libzip/lib:$LIBRARY_PATH
 
 
 
-
+# Added missing library "libgeneral"
+# Fixed by Bosteek
 git clone --recursive https://github.com/LukeZGD/libgeneral
 echo
 echo "Done Clone libgeneral"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/lzfse/lzfse
 echo
 echo "Done Clone lzfse"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/LukeZGD/img4tool
 echo
 echo "Done Clone img4tool"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/LukeZGD/
 echo
 echo "Done Clone libfragmentzip"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/libimobiledevice/libimobiledevice
 echo
 echo "Done Clone libimobiledevice"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/libimobiledevice/libplist
 echo
 echo "Done Clone libplist"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/nih-at/libzip.git
 echo
 echo "Done Clone libzip"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/marijuanARM/idevicerestore
 echo
 echo "Done Clone idevicerestore"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/libimobiledevice/libirecovery
 echo
 echo "Done Clone libirecovery"
 sleep 3s # Waits 5 seconds.
 clear
+
 git clone --recursive https://github.com/marijuanARM/futurerestore
 echo
 echo "Done Clone futurerestore"
@@ -138,18 +156,20 @@ sleep 3s # Waits 5 seconds.
 clear
 cd ..
 
-cd img4tool
-./autogen.sh && make && sudo make install
-echo
-echo "Done make img4tool"
-sleep 3s # Waits 5 seconds.
-clear
-cd ..
-
+#Added libgeneral compile command
+#Fixed by Bosteek
 cd libgeneral
 ./autogen.sh && make && sudo make install
 echo
 echo "Done make libgeneral"
+sleep 3s # Waits 5 seconds.
+clear
+cd ..
+
+cd img4tool
+./autogen.sh && make && sudo make install
+echo
+echo "Done make img4tool"
 sleep 3s # Waits 5 seconds.
 clear
 cd ..
@@ -201,7 +221,6 @@ echo
 echo "Done"
 echo
 echo "futurerestore has installed in /usr/local/bin"
-echo
 echo
 echo "Launching futurerestore after compiling: futurerestore <arguments>"
 
