@@ -202,5 +202,6 @@ echo "Done"
 echo
 echo "futurerestore has installed in /usr/local/bin"
 echo
+echo
 echo "Launching futurerestore after compiling: futurerestore <arguments>"
 
