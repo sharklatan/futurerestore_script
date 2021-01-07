@@ -61,7 +61,11 @@ export LIBRARY_PATH=/usr/local/opt/libzip/lib:$LIBRARY_PATH
 
 
 
-
+git clone --recursive https://github.com/LukeZGD/libgeneral
+echo
+echo "Done Clone libgeneral"
+sleep 3s # Waits 5 seconds.
+clear
 git clone --recursive https://github.com/lzfse/lzfse
 echo
 echo "Done Clone lzfse"
@@ -72,7 +76,7 @@ echo
 echo "Done Clone img4tool"
 sleep 3s # Waits 5 seconds.
 clear
-git clone --recursive https://github.com/LukeZGD/libfragmentzip
+git clone --recursive https://github.com/LukeZGD/
 echo
 echo "Done Clone libfragmentzip"
 sleep 3s # Waits 5 seconds.
@@ -142,6 +146,14 @@ sleep 3s # Waits 5 seconds.
 clear
 cd ..
 
+cd libgeneral
+./autogen.sh && make && sudo make install
+echo
+echo "Done make libgeneral"
+sleep 3s # Waits 5 seconds.
+clear
+cd ..
+
 cd libfragmentzip
 ./autogen.sh && make && sudo make install
 echo
@@ -182,11 +194,13 @@ cd futurerestore
 echo
 echo "Done make futurerestore"
 sleep 3s # Waits 5 seconds.
-clear
+#clear
 cd ..
 
 echo
 echo "Done"
-
+echo
+echo "futurerestore has installed in /usr/local/bin"
+echo
 echo "Launching futurerestore after compiling: futurerestore <arguments>"
 
