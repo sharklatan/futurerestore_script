@@ -88,7 +88,7 @@ echo "Done Clone img4tool"
 sleep 3s # Waits 5 seconds.
 clear
 
-git clone --recursive https://github.com/LukeZGD/
+git clone --recursive https://github.com/LukeZGD/libfragmentzip
 echo
 echo "Done Clone libfragmentzip"
 sleep 3s # Waits 5 seconds.
